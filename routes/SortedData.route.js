@@ -4,6 +4,6 @@ const router = express.Router()
 
 const SortedDataController = require("../controllers/SortedData.controller")
 
-router.route("/").post(SortedDataController.getSortedData)
+router.route("/").get(SortedDataController.getSortedData)
 
 module.exports = router

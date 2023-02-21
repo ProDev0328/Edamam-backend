@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-const packagedSchema = new Schema({
+const vitaminDPackagedSchema = new Schema({
   UPC: {
     type: String,
     default: ''
@@ -77,4 +77,4 @@ const packagedSchema = new Schema({
   },
 }, { timestamps: true });
 
-module.exports = mongoose.model("Packaged", packagedSchema);
+module.exports = mongoose.model("VitaminDPackaged", vitaminDPackagedSchema);

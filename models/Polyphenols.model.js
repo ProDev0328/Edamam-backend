@@ -2,29 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-const packagedSchema = new Schema({
-  UPC: {
-    type: String,
-    default: ''
-  },
-  foodCategory: {
-    type: String,
-    default: ''
-  },
-  servingsPerContainer: {
-    type: Number,
-    default: 0
-  },
-  servings: {
-    type: Array,
-    default: []
-  },
+const polyphenolsSchema = new Schema({
   label: {
-    type: String, 
-    default: ''
-  },
-  brand: { 
-    type: String, 
+    type: String,
     default: ''
   },
   foodId: {
@@ -36,15 +16,11 @@ const packagedSchema = new Schema({
     default: ''
   },
   measures: {
-    type: Array,
+    type: Array, 
     default: []
   },
-  ingredients: {
-    type: Array,
-    default: []
-  },
-  calories: {
-    type: Number,
+  calories: { 
+    type: Number, 
     default: 0
   },
   totalNutrients: {
@@ -71,10 +47,6 @@ const packagedSchema = new Schema({
     type: Array,
     default: []
   },
-  contentsLabel: {
-    type: String,
-    default: ''
-  },
 }, { timestamps: true });
 
-module.exports = mongoose.model("Packaged", packagedSchema);
+module.exports = mongoose.model("Polyphenols", polyphenolsSchema);

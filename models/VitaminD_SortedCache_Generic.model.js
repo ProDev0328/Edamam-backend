@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-const genericSchema = new Schema({
+const vitaminDGenericSchema = new Schema({
   foodCategory: {
     type: String,
     default: ''
@@ -53,4 +53,4 @@ const genericSchema = new Schema({
   },
 }, { timestamps: true });
 
-module.exports = mongoose.model("Generic", genericSchema);
+module.exports = mongoose.model("VitaminDGeneric", vitaminDGenericSchema);

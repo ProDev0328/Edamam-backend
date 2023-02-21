@@ -2,13 +2,29 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-const genericSchema = new Schema({
+const vitaminB12PackagedSchema = new Schema({
+  UPC: {
+    type: String,
+    default: ''
+  },
   foodCategory: {
     type: String,
     default: ''
   },
+  servingsPerContainer: {
+    type: Number,
+    default: 0
+  },
+  servings: {
+    type: Array,
+    default: []
+  },
   label: {
-    type: String,
+    type: String, 
+    default: ''
+  },
+  brand: { 
+    type: String, 
     default: ''
   },
   foodId: {
@@ -20,11 +36,15 @@ const genericSchema = new Schema({
     default: ''
   },
   measures: {
-    type: Array, 
+    type: Array,
     default: []
   },
-  calories: { 
-    type: Number, 
+  ingredients: {
+    type: Array,
+    default: []
+  },
+  calories: {
+    type: Number,
     default: 0
   },
   totalNutrients: {
@@ -51,6 +71,10 @@ const genericSchema = new Schema({
     type: Array,
     default: []
   },
+  contentsLabel: {
+    type: String,
+    default: ''
+  },
 }, { timestamps: true });
 
-module.exports = mongoose.model("Generic", genericSchema);
+module.exports = mongoose.model("VitaminB12Packaged", vitaminB12PackagedSchema);
